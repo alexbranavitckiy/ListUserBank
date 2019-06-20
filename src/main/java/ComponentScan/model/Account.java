@@ -18,28 +18,28 @@ public class Account {
     @Column(name = "userid")
     private int userid;
 
-    public void setUserid(int userid) {
-        this.userid = userid;
-    }
-
-    public void setAccountid(int accountid) {
-        this.accountid = accountid;
-    }
-
-    public void setAccount(int account) {
-        this.account = account;
-    }
-
     public int getUserid() {
         return userid;
+    }
+
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 
     public int getAccountid() {
         return accountid;
     }
 
+    public void setAccountid(int accountid) {
+        this.accountid = accountid;
+    }
+
     public int getAccount() {
         return account;
+    }
+
+    public void setAccount(int account) {
+        this.account = account;
     }
 
     @Override

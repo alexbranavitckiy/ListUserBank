@@ -17,7 +17,7 @@ public class UserServiceImpl implements Services<User> {
 
     @Override
     public int rich(int rich) {
-        return    userDAO.rich(rich);
+        return userDAO.rich(rich);
     }
 
     @Override
@@ -31,7 +31,7 @@ public class UserServiceImpl implements Services<User> {
     }
 
     @Autowired
-    public void setDAO(DAO<User>  userDAO) {
+    public void setDAO(DAO<User> userDAO) {
         this.userDAO = userDAO;
     }
 
@@ -40,7 +40,6 @@ public class UserServiceImpl implements Services<User> {
     public void edit(User user) {
         userDAO.edit(user);
     }
-
 
 
     @Override
@@ -61,6 +60,7 @@ public class UserServiceImpl implements Services<User> {
     public User getById(int id) {
         return userDAO.getById(id);
     }
+
     @Override
     @Transactional
     public List<User> allUsers() {
@@ -73,7 +73,7 @@ public class UserServiceImpl implements Services<User> {
         return userDAO.AccountCount();
     }
 
-   // @Override
+    // @Override
     //    @Transactional
     //    public boolean checkName(String title) {
     //        return userDAO.checkName(title);

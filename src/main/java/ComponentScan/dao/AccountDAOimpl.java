@@ -6,9 +6,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
+
 @Repository
 public class AccountDAOimpl implements DAO<Account> {
 
@@ -18,9 +17,9 @@ public class AccountDAOimpl implements DAO<Account> {
     @Override
     public int rich(int rich) {
         Session session = sessionFactory.getCurrentSession();
-     //   String sql = "SELECT name,SUM(account)  FROM user JOIN account q ON userid = q.userid GROUP BY name order by account desc ";
+        //   String sql = "SELECT name,SUM(account)  FROM user JOIN account q ON userid = q.userid GROUP BY name order by account desc ";
 //System.out.println( session.createQuery(sql, Number.class).getSingleResult().intValue());
-        return   2;
+        return 2;
     }
 
     //String SQL = ".."; //Запрос, который Вас интересует
@@ -31,10 +30,11 @@ public class AccountDAOimpl implements DAO<Account> {
         Session session = sessionFactory.getCurrentSession();
         String sql = "SELECT  SUM(account) FROM Account";
 
-        return    session.createQuery(sql, Number.class).getSingleResult().intValue();
+        return session.createQuery(sql, Number.class).getSingleResult().intValue();
 
     }
-//SELECT name,SUM(account)  FROM user JOIN account q ON user.userid = q.userid GROUP BY name order by account desc Limit 1
+
+    //SELECT name,SUM(account)  FROM user JOIN account q ON user.userid = q.userid GROUP BY name order by account desc Limit 1
     @Autowired
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
@@ -63,7 +63,7 @@ public class AccountDAOimpl implements DAO<Account> {
     @Override
     public int getMaxsumm(int userid) {
         Session session = sessionFactory.getCurrentSession();
-        String sql= "SELECT  SUM(account) FROM account";
+        String sql = "SELECT  SUM(account) FROM account";
         return session.createQuery(sql, Number.class).getSingleResult().intValue();
     }
 

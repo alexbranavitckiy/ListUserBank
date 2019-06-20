@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
 @Service
 public class AccountServicelmpl implements Services<Account> {
 
@@ -15,7 +16,7 @@ public class AccountServicelmpl implements Services<Account> {
 
     @Override
     public int rich(int rich) {
-     return    accountDAO.rich(rich);
+        return accountDAO.rich(rich);
     }
 
     @Autowired
@@ -37,7 +38,7 @@ public class AccountServicelmpl implements Services<Account> {
 
     @Override
     public int getMaxsumm(int userid) {
-       return accountDAO.getMaxsumm(userid);
+        return accountDAO.getMaxsumm(userid);
     }
 
     @Override

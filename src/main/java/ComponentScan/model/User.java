@@ -44,10 +44,9 @@ public class User {
     }
 
 
-
     @Override
     public String toString() {
-        return userid + " " + name + " " + sureName ;
+        return userid + " " + name + " " + sureName;
     }
 }
 

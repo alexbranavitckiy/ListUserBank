@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 
-
 @Repository
 public class UserDAOImpl implements DAO<User> {
     private SessionFactory sessionFactory;
@@ -27,7 +26,7 @@ public class UserDAOImpl implements DAO<User> {
     @Override
     public int getMaxsumm(int userid) {
         Session session = sessionFactory.getCurrentSession();
-        String sql= " SELECT userid, sum(account) from Account ";
+        String sql = " SELECT userid, sum(account) from Account ";
         return session.createQuery(sql, Number.class).getSingleResult().intValue();
     }
 
@@ -73,7 +72,7 @@ public class UserDAOImpl implements DAO<User> {
         session.update(user);
     }
 
-   // @Override
+    // @Override
     //    public boolean checkName(String name) {
     //        Session session = sessionFactory.getCurrentSession();
     //        Query query;
